@@ -1,0 +1,30 @@
+.banner__promotion{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(../assets/images/banner.jpg);
+    height: 80vh;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.slider-before{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+
+@media(max-width: 767px){
+    .banner__promotion{
+        height: unset;
+        padding: 50px 0px;
+    }
+    .text-heading{
+        font-size: 23px;
+    }
+    .mobile-center{
+        text-align: center;
+    }
+}
