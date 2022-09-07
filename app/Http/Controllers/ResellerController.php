@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ResellerExport;
 use App\Models\Reseller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Excel;
 
 class ResellerController extends Controller
 {
@@ -125,5 +127,10 @@ class ResellerController extends Controller
             ];
         }
         return redirect()->route('reseller.index')->with('message', $message);
+    }
+
+    public function exportExcel(){
+        $data['resellers'] = Reseller::all();
+        return Excel::download(new ResellerExport($data), 'Reseller List.xlsx');
     }
 }

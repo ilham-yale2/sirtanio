@@ -95,6 +95,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin',[AuthController::class,'password']);
 
     Route::resource('/admin/participant', ParticipantController::class);
+    Route::get('admin/participant-excel', [ParticipantController::class, 'exportExcel'])->name('export-participant');
+    Route::get('admin/reseller-excel', [ResellerController::class, 'exportExcel'])->name('export-reseller');
     Route::resource('admin/reseller', ResellerController::class);
     Route::resource('admin/promotion', PromotionController::class);
 });

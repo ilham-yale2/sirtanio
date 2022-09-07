@@ -16,6 +16,7 @@
                                     </div>
                                 </div>
                             @endif
+                            <a href="{{route('export-reseller')}}" target="_blank" class="btn btn-success mb-3">Download Excel</a>
                             <table id="dataTable" class="display" style="table-layout:fixed; width:100%;">
                                 <thead>
                                     <tr>

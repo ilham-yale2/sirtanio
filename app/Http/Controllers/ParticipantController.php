@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Participant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Excel;
+use App\Exports\ParticipantExport;
 
 class ParticipantController extends Controller
 {
@@ -131,5 +133,10 @@ class ParticipantController extends Controller
             ];
         }
         return redirect()->route('participant.index')->with('message', $message);
+    }
+
+    public function exportExcel(){
+        $data['participants'] = Participant::all();
+        return Excel::download(new ParticipantExport($data), 'Participant List.xlsx');
     }
 }

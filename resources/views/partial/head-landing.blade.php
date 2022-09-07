@@ -192,7 +192,7 @@
                                 data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                                 data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="600"
                                 data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                                <span class="landing-text">{!! $item->sub_title !!}</span>
+                                <div class="landing-text col-md-10 mx-auto">{!! $item->sub_title !!}</div>
                             </div>
                             <div class="tp-caption tp-resizeme px-3 px-md-0" data-x="['center','center','center','center']"
                                 data-hoffset="['720','720','180','-10']"

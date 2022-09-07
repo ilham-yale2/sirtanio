@@ -16,14 +16,16 @@
                                     </div>
                                 </div>
                             @endif
-                            <h6 class="text-white col">
-                                Add new slide
-                            </h6>
+                            <div class="col-md-12">
+                                <h6 class="text-white">
+                                    Add new slide
+                                </h6>
+                            </div>
                             <form action="{{route('promotion.store')}}" method="POST" class="mb-5 row" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group col-md-6 ">
-                                    <label for="image">Image</label>
-                                    <input type="file" name="image" id="image" class="form-control">
+                                    <label for="image" class="mb-2">Image</label>
+                                    <input type="file" name="image" id="image" class="form-control" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="">Preview</label>
@@ -50,24 +52,14 @@
                                                 <img src="{{asset('storage/'.$item->source)}}" alt="" width="300">
                                             </td>
                                             <td>
-                                                <div class="dropdown dropright">
-                                                    <button class="btn btn-secondary" type="button" id="dropdownMenuButton"
-                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fas fa-ellipsis-v"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
-                                                        <li>
-                                                            <form id="form-delete{{ $item->id }}"
-                                                                action="{{route('promotion.destroy', ['promotion' => $item->id])}}"
-                                                                method="post" style="display: none">
-                                                                @method('delete')
-                                                                @csrf
-                                                            </form>
-                                                            <a class="dropdown-item text-dark" href="#"
-                                                                onclick="deletePromotion({{ $item->id }})">Delete</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                <form id="form-delete{{ $item->id }}"
+                                                    action="{{route('promotion.destroy', ['promotion' => $item->id])}}"
+                                                    method="post" style="display: none">
+                                                    @method('delete')
+                                                    @csrf
+                                                </form>
+                                                <button type="button" class="btn btn-danger"
+                                                    onclick="deletePromotion({{ $item->id }})">Delete</button>
                                             </td>
                                         </tr>
                                     @endforeach

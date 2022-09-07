@@ -509,9 +509,9 @@
                 <h3 class="mb-1 mb-md-0 mobile-center text-heading mx-auto mx-md-0">Gratis Ongkir Selama Bulan Desember</h3>
                 <div class="mx-auto mx-md-0 ml-md-auto mt-3 mt-md-0">
                     <a target="_blank" href="https://bit.ly/sirtanio-order" class="rounded-pill btn bg-white text-danger">Order Sekarang</a>
-                    <button class="btn p-2 p-md-3 ml-2 btn-success rounded-circle">
+                    <button class="btn p-1 p-md-2 ml-2 btn-success rounded-circle">
                         <a target="_blank" href="{{$general->whatsapp}}" class="text-white">
-                            <span class="iconify d-none d-md-block" data-icon="akar-icons:whatsapp-fill" data-width="35"></span>
+                            <span class="iconify d-none d-md-block" data-icon="akar-icons:whatsapp-fill" data-width="30"></span>
                             <span class="iconify d-block d-md-none" data-icon="akar-icons:whatsapp-fill" data-width="26"></span>
                         </a>
                     </button>
